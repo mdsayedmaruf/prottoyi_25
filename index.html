@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prottoyi 25 - Official Mobile App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="app-icon">
+                <img src="icon.png" alt="Prottoyi 25 App Icon" class="icon">
+            </div>
+            <h1 class="app-title">Prottoyi 25</h1>
+            <p class="app-subtitle">Official Mobile App</p>
+            <div class="version-info">
+                <span class="version-badge">Beta 1.0.0</span>
+            </div>
+            <div class="badge">
+                <span>CSE 25 Batch</span>
+            </div>
+        </header>
+
+        <!-- App Info Section -->
+        <section class="app-info">
+            <h2>University of Chittagong</h2>
+            <p class="description">
+                The official mobile application for CSE 25 batch students. Stay connected with your batch mates, 
+                access important updates, and enjoy exclusive features designed specifically for our community.
+            </p>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download-section">
+            <h3>Download Now</h3>
+            <p class="download-subtitle">Choose the version that works best for your device</p>
+            
+            <div class="download-buttons">
+                <button class="download-btn primary" onclick="downloadApp('universal')">
+                    <i class="fas fa-download"></i>
+                    <div class="btn-content">
+                        <span class="btn-title">Universal APK</span>
+                        <span class="btn-subtitle">For all devices</span>
+                        <span class="btn-size">45 MB</span>
+                    </div>
+                </button>
+                
+                <button class="download-btn" onclick="downloadApp('64bit')">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="btn-content">
+                        <span class="btn-title">APK 64-bit</span>
+                        <span class="btn-subtitle">For modern devices</span>
+                        <span class="btn-size">25 MB</span>
+                    </div>
+                </button>
+                
+                <button class="download-btn" onclick="downloadApp('32bit')">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div class="btn-content">
+                        <span class="btn-title">APK 32-bit</span>
+                        <span class="btn-subtitle">For older devices</span>
+                        <span class="btn-size">23 MB</span>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <!-- Screenshots Section -->
+        <section class="screenshots">
+            <h2 class="section-title">App Screenshots</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-item">
+                    <img src="prottoyi-screenshot-01.png" alt="Prottoyi 25 App Screenshot 1" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="prottoyi-screenshot-02.png" alt="Prottoyi 25 App Screenshot 2" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="prottoyi-screenshot-03.png" alt="Prottoyi 25 App Screenshot 3" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="prottoyi-screenshot-04.png" alt="Prottoyi 25 App Screenshot 4" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="prottoyi-screenshot-05.png" alt="Prottoyi 25 App Screenshot 5" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="prottoyi-screenshot-06.png" alt="Prottoyi 25 App Screenshot 6" loading="lazy">
+                </div>
+                <div class="screenshot-item">
+                    <img src="prottoyi-screenshot-07.png" alt="Prottoyi 25 App Screenshot 7" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Connect with Batchmates</h3>
+                    <p>Stay connected with your CSE 25 batch friends and classmates</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-calendar"></i>
+                    <h3>Event Updates</h3>
+                    <p>Get notified about important batch events and activities</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Academic Resources</h3>
+                    <p>Access study materials and academic information</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Section -->
+        <section class="developer">
+            <h3>Developer</h3>
+            <div class="developer-info">
+                <div class="developer-details">
+                    <h4>Sayed Maruf</h4>
+                    <p>CSE 25 Batch, University of Chittagong</p>
+                    <a href="https://www.facebook.com/profile.php?id=100091346253784" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                        Connect on Facebook
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Prottoyi 25. All rights reserved.</p>
+            <p>University of Chittagong - CSE Department</p>
+        </footer>
+    </div>
+
+    <!-- Download Modal -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Download Starting...</h3>
+            <p id="downloadMessage">Your download will begin shortly.</p>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
