@@ -226,12 +226,13 @@ body::before {
 .download-section {
     text-align: center;
     margin-bottom: 60px;
+    padding: 0 20px;
 }
 
 .download-section h3 {
     font-size: 2.2rem;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .download-subtitle {
@@ -261,11 +262,40 @@ body::before {
     transition: all 0.3s ease;
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
     text-align: left;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+    overflow: hidden;
 }
 
 .download-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(102, 126, 234, 0.35);
+}
+
+.download-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.download-btn:active::before {
+    width: 300px;
+    height: 300px;
 }
 
 .download-btn.primary {
@@ -275,6 +305,11 @@ body::before {
 
 .download-btn.primary:hover {
     box-shadow: 0 12px 35px rgba(240, 147, 251, 0.4);
+}
+
+.download-btn.primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(240, 147, 251, 0.35);
 }
 
 .download-btn i {
@@ -341,6 +376,11 @@ body::before {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     background: rgba(255, 255, 255, 0.15);
+}
+
+.screenshot-item:active {
+    transform: translateY(-2px);
+    transition: transform 0.1s ease;
 }
 
 .screenshot-item img {
@@ -530,16 +570,45 @@ body::before {
     100% { transform: rotate(360deg); }
 }
 
+/* Mobile-specific improvements */
+@media (hover: none) and (pointer: coarse) {
+    .download-btn:hover {
+        transform: none;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+    }
+    
+    .download-btn.primary:hover {
+        box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
+    }
+    
+    .screenshot-item:hover {
+        transform: none;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .feature-item:hover {
+        transform: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
         margin: 10px;
-        padding: 15px;
+        padding: 20px;
         border-radius: 15px;
+    }
+    
+    .header {
+        padding: 40px 20px;
+        margin-bottom: 40px;
     }
     
     .app-title {
         font-size: 2.5rem;
+        margin-bottom: 20px;
     }
     
     .icon {
@@ -547,21 +616,59 @@ body::before {
         height: 100px;
     }
     
+    .app-info {
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+    
+    .download-section {
+        margin-bottom: 50px;
+        padding: 0 10px;
+    }
+    
+    .download-section h3 {
+        margin-bottom: 20px;
+    }
+    
+    .download-subtitle {
+        margin-bottom: 30px;
+    }
+    
     .download-buttons {
         max-width: 100%;
+        gap: 15px;
+        padding: 0 10px;
     }
     
     .download-btn {
-        padding: 15px 20px;
+        padding: 18px 20px;
+        margin-bottom: 5px;
+        min-height: 44px;
+        font-size: 1rem;
+    }
+    
+    .screenshots {
+        margin: 30px 0;
+        padding: 40px 20px;
     }
     
     .screenshots-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 15px;
+        margin-top: 30px;
+    }
+    
+    .screenshot-item {
+        padding: 8px;
     }
     
     .screenshot-item img {
-        max-height: 300px;
+        max-height: 320px;
+        border-radius: 8px;
+    }
+    
+    .features {
+        margin-bottom: 40px;
     }
     
     .features-grid {
@@ -576,36 +683,124 @@ body::before {
 }
 
 @media (max-width: 480px) {
+    .container {
+        margin: 5px;
+        padding: 15px;
+    }
+    
+    .header {
+        padding: 30px 15px;
+        margin-bottom: 30px;
+    }
+    
     .app-title {
         font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .app-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .app-info {
+        margin-bottom: 30px;
+        padding: 0 5px;
+    }
+    
+    .app-info h2 {
+        font-size: 1.6rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .download-section {
+        margin-bottom: 40px;
+        padding: 0 5px;
+    }
+    
+    .download-section h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .download-subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .download-buttons {
+        gap: 12px;
+        padding: 0 5px;
     }
     
     .download-btn {
         flex-direction: column;
         text-align: center;
-        padding: 20px;
+        padding: 20px 15px;
+        margin-bottom: 8px;
     }
     
     .download-btn i {
         margin-right: 0;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        font-size: 1.8rem;
     }
     
     .btn-content {
         align-items: center;
     }
     
+    .btn-title {
+        font-size: 1.1rem;
+    }
+    
+    .btn-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .screenshots {
+        margin: 25px 0;
+        padding: 30px 15px;
+    }
+    
+    .screenshots h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
     .screenshots-grid {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+        margin-top: 25px;
     }
     
     .screenshot-item {
-        padding: 8px;
+        padding: 6px;
     }
     
     .screenshot-item img {
-        max-height: 250px;
+        max-height: 280px;
+        border-radius: 6px;
+    }
+    
+    .features h3 {
+        font-size: 1.8rem;
+    }
+    
+    .feature-item {
+        padding: 25px 15px;
+    }
+    
+    .feature-item i {
+        font-size: 2.5rem;
+    }
+    
+    .feature-item h4 {
+        font-size: 1.2rem;
     }
 }
 
