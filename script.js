@@ -21,9 +21,16 @@ const downloadButtons = document.querySelectorAll('.download-btn');
 
 downloadButtons.forEach(button => {
     button.addEventListener('click', function(e) {
+        // Check if this button has a real link (not just #)
+        const href = this.getAttribute('href');
+        if (href && href !== '#') {
+            // Let the browser handle the redirect naturally
+            return;
+        }
+        
         e.preventDefault();
         
-        // Show the download modal
+        // Show the download modal for buttons without real links
         modal.style.display = 'block';
         
         // Get the button type from the content
