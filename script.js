@@ -10,7 +10,7 @@ function downloadApp(version) {
     
     switch(version) {
         case 'universal':
-            downloadUrl = 'https://drive.google.com/file/d/1Z13Tnhaae3eRa4kqKcXtbytiNwn7A8Sp/view?usp=sharing';
+            downloadUrl = 'https://drive.google.com/file/d/1JLa4AScjs_UrA7MI5IU2dYrIR60UKfTm/view?usp=sharing';
             message = 'Downloading Universal APK for all devices...';
             break;
         case '64bit':
