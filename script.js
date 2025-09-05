@@ -16,40 +16,7 @@ window.addEventListener('click', function(event) {
     }
 });
 
-// Download button functionality
-const downloadButtons = document.querySelectorAll('.download-btn');
-
-downloadButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        // Check if this button has a real link (not just #)
-        const href = this.getAttribute('href');
-        if (href && href !== '#') {
-            // Let the browser handle the redirect naturally
-            return;
-        }
-        
-        e.preventDefault();
-        
-        // Show the download modal for buttons without real links
-        modal.style.display = 'block';
-        
-        // Get the button type from the content
-        const btnTitle = this.querySelector('.btn-title').textContent;
-        const downloadMessage = document.getElementById('downloadMessage');
-        
-        downloadMessage.textContent = `Preparing ${btnTitle} download...`;
-        
-        // Simulate download process
-        setTimeout(() => {
-            downloadMessage.textContent = 'Download will begin shortly. Thank you for downloading Prottoyi 25!';
-        }, 2000);
-        
-        // Auto close modal after 4 seconds
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 4000);
-    });
-});
+// Download buttons will work as normal links without any JavaScript interference
 
 // Smooth scrolling for any anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
