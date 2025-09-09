@@ -202,6 +202,76 @@ body::before {
         inset 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
+/* Hero Button Styles */
+.hero-button {
+    margin-top: 30px;
+}
+
+.visit-website-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 
+        0 10px 25px rgba(240, 147, 251, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.visit-website-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 15px 35px rgba(240, 147, 251, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    color: white;
+}
+
+.visit-website-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 8px 20px rgba(240, 147, 251, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.visit-website-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.visit-website-btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+.visit-website-btn i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.visit-website-btn:hover i {
+    transform: translateX(2px);
+}
+
 /* App Info Section */
 .app-info {
     text-align: center;
